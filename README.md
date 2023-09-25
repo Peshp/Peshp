@@ -1,5 +1,8 @@
 # 💫 About Me:
-- 🔭I’m currently working on getting myself together and doing what I love.<br>- :man_student:I'm currently learning C# Web Development in [SoftUni](https://softuni.bg/)<br>- 📫How to reach me: todorovanton88@gmail.com<br>- ⚡Fun fact: I love math, coding, chess.
+- 🔭I’m currently working on getting myself together and doing what I love.
+- :man_student: I'm currently learning C# Web Development in [SoftUni](https://softuni.bg/)
+- 📫How to reach me: todorovanton88@gmail.com
+- ⚡Fun fact: I love math, coding, chess.
 
 ## 🌐 Socials:
 [![Discord](https://img.shields.io/badge/Discord-%237289DA.svg?logo=discord&logoColor=white)](https://discord.com/invite/Peshp#3759)[![Linkedin](https://img.shields.io/badge/Linkedin-%23FF0000.svg?logo=Linkedin&logoColor=white)](https://www.linkedin.com/in/anton-todorov-todorov/) 
