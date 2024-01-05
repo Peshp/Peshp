@@ -1,5 +1,6 @@
 # 💫 About Me:
 <h1 align="center">Hi 👋, I'm Anton</h1>
+
 - 🔭 I’m currently working on **getting myself together and doing what I love.**
 
 - 🌱 I’m currently learning **Angular, DevOps**
