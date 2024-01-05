@@ -12,10 +12,7 @@
 
 ---
 
-![Metrics](https://metrics.lecoq.io/Peshp?template=classic&base=header%2C%20activity%2C%20community%2C%20repositories%2C%20metadata&base.indepth=false&base.hireable=false&base.skip=false&config.timezone=Europe%2FSofia)
-
-![](https://github-readme-streak-stats.herokuapp.com/?user=Peshp&theme=blueberry&hide_border=false)<br/>
-![](https://github-readme-stats.vercel.app/api/top-langs/?username=Peshp&theme=blueberry&hide_border=false&include_all_commits=false&count_private=false&layout=compact)
+![Peshp's Stats](https://github-readme-stats.vercel.app/api?username=Peshp&theme=ayu-mirage&show_icons=true&hide_border=true&count_private=true)
 
 
  
