@@ -7,7 +7,7 @@
 
 - 👨‍💻 All of my projects are available at [https://github.com/Peshp?tab=repositories](https://github.com/Peshp?tab=repositories)
 
-- 💬 Ask me about **C#**
+- 💬 Ask me about **anything**
 
 - 📫 How to reach me **todorovanton88@gmail.com**
 
