@@ -18,7 +18,6 @@
 </a>
 
 - :office: &nbsp;I'm currently learning Python
-- :office: &nbsp;I'm currently working at learning python
 - :book: &nbsp;Learn more about my projects on my **[Repositories](https://github.com/Peshp?tab=repositories)**
 - :computer: &nbsp;Connect with me on **[LinkedIn](https://www.linkedin.com/in/anton-todorov-todorov/)**
 
