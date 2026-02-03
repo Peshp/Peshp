@@ -24,7 +24,7 @@
 
 <br>
 
-<h2 align="left" id="macropower-tech">Favorite Tech</h2>
+<h2 align="left" id="macropower-tech">Tech Stack</h2>
 
 > Tools, languages, and other things that I like to work with.
 
@@ -80,6 +80,3 @@
     </td>
   </tr>
 </table>
-
-<h2 align="left">Activity</h2>
-
