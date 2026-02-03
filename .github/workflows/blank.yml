@@ -13,58 +13,41 @@ jobs:
       contents: write
 
     steps:
-      # Step 1: Check out the repository
       - name: Checkout the repository
         uses: actions/checkout@v4
 
-      # Step 2: Setup Python
       - name: Setup Python
         uses: actions/setup-python@v4
         with:
           python-version: '3.9'
 
-      # Step 3: Install dependencies
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install -r requirements.txt
+          pip install aiohttp requests
 
-      # Step 4: Ensure the output directory exists
       - name: Create output directory
         run: mkdir -p output/generated/
 
-      # Step 5: Run stats generator scripts
       - name: Generate stats files
         env:
-          # Mandatory Secrets
           ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-          
-          # Environment Variables (Prevents TypeError: NoneType)
           GITHUB_ACTOR: ${{ github.actor }}
-          COUNT_STATS_FROM_FORKS: "false" 
+          COUNT_STATS_FROM_FORKS: "false"
           EXCLUDE_REPOS: ""
           IGNORE_REPOS: ""
         run: |
           python github_stats.py
           python generate_images.py
 
-      # Step 6: Verify generated files
-      - name: Verify generated SVG files
-        run: ls -al output/generated/ || echo "No files found"
-
-      # Step 7: Commit and push the changes
       - name: Commit and push changes
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          
-          # Stage the generated files
           git add output/generated/
-          
-          # Only commit and push if changes exist to avoid workflow failure
           if [ -n "$(git status --porcelain)" ]; then
-            git commit -m "Automated GitHub stats generation"
+            git commit -m "Update GitHub statistics images"
             git push
           else
-            echo "No changes to commit"
+            echo "No changes detected."
           fi
