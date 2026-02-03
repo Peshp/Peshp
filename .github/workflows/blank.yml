@@ -30,8 +30,16 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
+      # NEW: Ensure the output directory exists so the scripts don't fail
+      - name: Create output directory
+        run: mkdir -p output/generated/
+
       # Step 4: Run stats generator scripts
+      # We map the Secret to an Environment Variable here
       - name: Generate stats files
+        env:
+          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+          GITHUB_ACTOR: ${{ github.actor }}
         run: |
           python github_stats.py
           python generate_images.py
@@ -45,6 +53,6 @@ jobs:
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          # Only add and commit if there are actually changes to prevent workflow errors
           git add output/generated/
-          git commit -m "Automated GitHub stats generation by GitHub Actions"
-          git push
+          git diff --quiet && git diff --staged --quiet || (git commit -m "Automated GitHub stats generation" && git push)
