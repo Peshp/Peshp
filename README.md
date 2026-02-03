@@ -1,4 +1,4 @@
-``<h1 align="left" id="macropower-title">:wave: Hello there! I'm Anton</h1>
+<h1 align="left" id="macropower-title">:wave: Hello there! I'm Anton</h1>
 <h3 align="left">I do Software Engineering things</h3>
 
 <p align="left">
@@ -80,3 +80,7 @@
     </td>
   </tr>
 </table>
+
+<h2 align="left">Coding Activity</h2>
+
+[![Peshp's activity graph](https://github-readme-activity-graph.vercel.app/graph?username=Peshp&bg_color=000000&color=ffffff&line=3498db&point=ffffff&area=true&area_color=3498db&hide_border=true)](https://github.com/Peshp)
