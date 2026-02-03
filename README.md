@@ -81,9 +81,9 @@
   </tr>
 </table>
 
-<h2 align="left">Coding Activity</h2>
+<h2 align="left">Activity</h2>
 
 > Total logged open-source coding time since 2020-07-19. Updated every 1 hour.
-
-[![Lichess Blitz](https://img.shields.io/badge/Lichess%20Blitz-Rating-orange?style=for-the-badge&logo=lichess&logoColor=white)]([https://lichess.org/@/Peshp](https://lichess.org/@/Crew00))
+> 
+[![Lichess Stats](https://lichess-stats.vercel.app/api/Crew00?theme=dark&background=00000000)](https://lichess.org/@/Crew00)
 
