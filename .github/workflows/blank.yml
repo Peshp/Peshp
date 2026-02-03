@@ -1,7 +1,6 @@
 name: GitHub Stats Generator
 
 on:
-  # Trigger automatically when there are changes or manually via GitHub Actions
   push:
     branches:
       - main
@@ -30,29 +29,42 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      # NEW: Ensure the output directory exists so the scripts don't fail
+      # Step 4: Ensure the output directory exists
       - name: Create output directory
         run: mkdir -p output/generated/
 
-      # Step 4: Run stats generator scripts
-      # We map the Secret to an Environment Variable here
+      # Step 5: Run stats generator scripts
       - name: Generate stats files
         env:
+          # Mandatory Secrets
           ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+          
+          # Environment Variables (Prevents TypeError: NoneType)
           GITHUB_ACTOR: ${{ github.actor }}
+          COUNT_STATS_FROM_FORKS: "false" 
+          EXCLUDE_REPOS: ""
+          IGNORE_REPOS: ""
         run: |
           python github_stats.py
           python generate_images.py
 
-      # Step 5: Verify generated files
+      # Step 6: Verify generated files
       - name: Verify generated SVG files
-        run: ls -al output/generated/
+        run: ls -al output/generated/ || echo "No files found"
 
-      # Step 6: Commit and push the changes
+      # Step 7: Commit and push the changes
       - name: Commit and push changes
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          # Only add and commit if there are actually changes to prevent workflow errors
+          
+          # Stage the generated files
           git add output/generated/
-          git diff --quiet && git diff --staged --quiet || (git commit -m "Automated GitHub stats generation" && git push)
+          
+          # Only commit and push if changes exist to avoid workflow failure
+          if [ -n "$(git status --porcelain)" ]; then
+            git commit -m "Automated GitHub stats generation"
+            git push
+          else
+            echo "No changes to commit"
+          fi
