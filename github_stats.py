@@ -20,7 +20,7 @@ class Queries(object):
 
     def __init__(self, username: str, access_token: str,
                  session: aiohttp.ClientSession, max_connections: int = 10):
-        self.username = username
+        self.username = peshp
         self.access_token = access_token
         self.session = session
         self.semaphore = asyncio.Semaphore(max_connections)
